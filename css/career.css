@@ -1,0 +1,32 @@
+/* ===== 경력(career) 전용 스타일 ===== */
+.school-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 1em;
+    background: #f9fafb;
+    box-shadow: 0 2px 8px rgba(79,138,139,0.06);
+    animation: fadeInMain 1s;
+  }
+  .school-table caption {
+    font-weight: bold;
+    color: #395b64;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+  .school-table th, .school-table td {
+    border: 1px solid #c3d0d8;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .school-table th {
+    background: #4f8a8b;
+    color: #fff;
+  }
+  .school-table tr:nth-child(even) {
+    background: #f0f4f8;
+  }
+  .school-table tr:hover {
+    background: #e0e7ff;
+    transition: background 0.2s;
+  }

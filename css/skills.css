@@ -1,0 +1,51 @@
+/* ===== 배운 기술(skills) 전용 스타일 ===== */
+
+/* 카드형 그리드 레이아웃 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+    margin: 40px 0 0 0;
+  }
+  
+  /* 개별 카드 */
+  .skill-card {
+    background: linear-gradient(135deg, #e0e7ff 60%, #f0f4f8 100%);
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgba(79,138,139,0.09);
+    padding: 26px 18px;
+    text-align: center;
+    transition: transform 0.23s, box-shadow 0.23s;
+    position: relative;
+  }
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(79,138,139,0.18);
+    background: linear-gradient(135deg, #d2e9e9 60%, #e0e7ff 100%);
+  }
+  
+  .skill-card h3 {
+    margin-bottom: 14px;
+    color: #395b64;
+  }
+  
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skill-list li {
+    margin-bottom: 8px;
+    font-size: 1.07em;
+    color: #333;
+  }
+  
+  #github.skill-card a {
+    color: #395b64;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  #github.skill-card a:hover {
+    color: #4f8a8b;
+  }

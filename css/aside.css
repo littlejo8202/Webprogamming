@@ -1,0 +1,83 @@
+.layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* 왼쪽 aside */
+  .left-aside {
+    width: 180px;
+    background: #f0f4f8;
+    padding: 24px 14px;
+    margin-right: 18px;
+    border-radius: 12px;
+    font-size: 0.97em;
+    color: #395b64;
+    box-shadow: 0 2px 8px rgba(79,138,139,0.08);
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+  }
+  
+  .left-aside hr, .right-aside hr {
+    margin: 18px 0;
+    border: none;
+    border-top: 1px solid #d2e9e9;
+  }
+  
+  /* 오른쪽 aside */
+  .right-aside {
+    width: 180px;
+    background: #e0e7ff;
+    padding: 24px 14px;
+    margin-left: 18px;
+    border-radius: 12px;
+    font-size: 0.97em;
+    color: #395b64;
+    box-shadow: 0 2px 8px rgba(79,138,139,0.08);
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+  }
+  
+  #mini-calendar {
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  #visitor-count {
+    font-size: 1.8em;
+    color: #4f8a8b;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+  }
+  
+  #weather-widget {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .weather-city {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  .weather-date {
+    font-size: 1em;
+    color: #395b64;
+  }
+  .weather-status {
+    font-size: 1.4em;
+    margin-top: 6px;
+    color: #4f8a8b;
+  }
+  
+  /* 메인 콘텐츠 */
+  main {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* 반응형: 화면이 좁아지면 aside 숨김 */
+  @media (max-width: 900px) {
+    .left-aside, .right-aside { display: none; }
+    .layout { flex-direction: column; }
+  }

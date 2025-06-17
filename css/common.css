@@ -1,0 +1,140 @@
+/* ===== 공통 스타일 ===== */
+body {
+    font-family: 'Segoe UI', '맑은 고딕', sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 100%);
+    margin: 0;
+    color: #222;
+  }
+  
+  header {
+    background: #4f8a8b;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(79,138,139,0.08);
+    transition: background 0.5s;
+  }
+  header:hover {
+    background: #395b64;
+  }
+  
+  #main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  #main-nav a:hover,
+  #main-nav a.active {
+    background: #fff;
+    color: #4f8a8b;
+  }
+  #main-nav a.active {
+    pointer-events: none;
+    font-weight: bold;
+    cursor: default;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(79,138,139,0.12);
+    padding: 32px 36px;
+    animation: fadeInMain 1s;
+  }
+  
+  section {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  section:last-child {
+    border-bottom: none;
+  }
+  
+  @keyframes fadeInMain {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  article {
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #f0f4f8;
+    box-shadow: 0 2px 8px rgba(79,138,139,0.03);
+    transition: box-shadow 0.3s;
+  }
+  article:hover {
+    box-shadow: 0 6px 24px rgba(79,138,139,0.11);
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  h2 {
+    color: #4f8a8b;
+    margin-bottom: 12px;
+    border-left: 6px solid #4f8a8b;
+    padding-left: 10px;
+  }
+  h3 {
+    color: #395b64;
+    margin-top: 0;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #4f8a8b;
+    border-left: 4px solid #4f8a8b;
+    margin: 12px 0;
+    padding-left: 14px;
+  }
+  
+  footer {
+    text-align: center;
+    color: #888;
+    padding: 20px 0 10px 0;
+    font-size: 0.95em;
+    background: #f0f4f8;
+    margin-top: 40px;
+  }
+  
+  .highlight {
+    color: #395b64;
+    font-weight: bold;
+  }
+  
+  /* 반응형 */
+  @media (max-width: 700px) {
+    main {
+      padding: 18px 8px;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+    #main-nav ul {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }

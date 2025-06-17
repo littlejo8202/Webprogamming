@@ -1,0 +1,30 @@
+/* ===== 나의 소개(about) 전용 스타일 ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 300px;
+  }
+  input[type="text"], input[type="password"] {
+    padding: 6px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  input:focus {
+    border: 1.5px solid #4f8a8b;
+  }
+  button[type="submit"], button[type="button"] {
+    background: #4f8a8b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button[type="submit"]:hover, button[type="button"]:hover {
+    background: #395b64;
+  }

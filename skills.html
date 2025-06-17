@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>조민혁의 portpolio - 배운 기술</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/aside.css">
+</head>
+<body>
+  <header>
+    <h1>조민혁의 portpolio</h1>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">나의 소개</a></li>
+        <li><a href="career.html">경력</a></li>
+        <li><a href="skills.html" class="active">배운 기술</a></li>
+        <li><a href="projects.html">프로젝트</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="layout">
+    <!-- 왼쪽 aside -->
+    <aside class="left-aside">
+      <h3>오늘의 한마디</h3>
+      <p id="todays-quote">"Keep calm and code on!"</p>
+      <hr>
+      <h4>미니 달력</h4>
+      <div id="mini-calendar"></div>
+    </aside>
+    <!-- 메인 콘텐츠 -->
+    <main>
+      <section>
+        <h2>3. 배운 기술</h2>
+        <article id="languages">
+          <h3>프로그래밍 언어</h3>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>C</li>
+          </ul>
+        </article>
+        <article id="tools">
+          <h3>개발 도구</h3>
+          <ul>
+            <li>VS Code</li>
+            <li>VirtualBox</li>
+            <li>Eclipse</li>
+          </ul>
+        </article>
+        <article id="github">
+          <h3>GitHub</h3>
+          <p>
+            <a href="https://github.com/littlejo8202" target="_blank">https://github.com/littlejo8202</a>
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- 오른쪽 aside -->
+    <aside class="right-aside">
+      <h3>방문자 수</h3>
+      <p id="visitor-count">0</p>
+      <hr>
+      <h4>날씨 위젯</h4>
+      <div id="weather-widget">
+        <div class="weather-city">Seoul</div>
+        <div class="weather-date"></div>
+        <div class="weather-status"></div>
+      </div>
+    </aside>
+  </div>
+  <footer>
+    <p>&copy; 2025 202337665 조민혁. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS: 오늘의 한마디, 미니 달력, 방문자 카운터, 날씨 위젯 -->
+  <script>
+    // 오늘의 한마디 (랜덤)
+    const quotes = [
+      '"Keep calm and code on!"',
+      '"실패는 성공의 어머니다."',
+      '"문제는 반드시 해결된다."',
+      '"꾸준함이 실력을 만든다."',
+      '"코드는 거짓말하지 않는다."'
+    ];
+    document.getElementById('todays-quote').innerText =
+      quotes[Math.floor(Math.random() * quotes.length)];
+
+    // 미니 달력
+    function makeMiniCalendar() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const date = now.getDate();
+      const week = ['일','월','화','수','목','금','토'][now.getDay()];
+      document.getElementById('mini-calendar').innerHTML =
+        `<div style="font-weight:bold; font-size:1.2em;">${year}.${month<10?'0'+month:month}</div>
+         <div style="font-size:2em; color:#4f8a8b;">${date}</div>
+         <div style="color:#395b64;">${week}요일</div>`;
+    }
+    makeMiniCalendar();
+
+    // 방문자 카운터 (localStorage 기반, 브라우저별)
+    let visitCount = localStorage.getItem("page_view");
+    if (visitCount) {
+      visitCount = Number(visitCount) + 1;
+      localStorage.setItem("page_view", visitCount);
+    } else {
+      visitCount = 1;
+      localStorage.setItem("page_view", 1);
+    }
+    document.getElementById("visitor-count").innerText = visitCount + "명";
+
+    // 날씨 위젯 (디자인용, 실제 API X)
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    document.querySelector('.weather-date').innerText =
+      `${month<10?'0'+month:month}.${day<10?'0'+day:day}`;
+    // 임의 날씨 데이터 (실제 API 연동은 보안상 생략)
+    document.querySelector('.weather-status').innerText = '☀️ 17℃ 맑음';
+  </script>
+</body>
+</html>
